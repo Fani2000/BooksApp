@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApp.Services", "BooksA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApp.Data", "BooksApp.Data\BooksApp.Data.csproj", "{ED02443E-7226-4B3E-A691-7FA96AB59639}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApp.Test", "BooksApp.Test\BooksApp.Test.csproj", "{5B770B30-22AA-4C25-8389-6365CD587F6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ED02443E-7226-4B3E-A691-7FA96AB59639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED02443E-7226-4B3E-A691-7FA96AB59639}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED02443E-7226-4B3E-A691-7FA96AB59639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B770B30-22AA-4C25-8389-6365CD587F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B770B30-22AA-4C25-8389-6365CD587F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B770B30-22AA-4C25-8389-6365CD587F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B770B30-22AA-4C25-8389-6365CD587F6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
