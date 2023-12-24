@@ -14,22 +14,39 @@ namespace BooksApp.Services
 
         public void AddBook(Book book)
         {
-            throw new NotImplementedException();
+            context.Add(book);
+            context.SaveChanges();
         }
 
         public void DeleteBook(int bookId)
         {
-            throw new NotImplementedException();
+            var bookToDelete = context.Books.Find(bookId);
+
+            if(bookToDelete != null)
+            {
+                context.Remove(bookToDelete);
+                context.SaveChanges();
+            }else
+            {
+                throw new InvalidOperationException("Can't delet book that doesn't exists.");
+            }
         }
 
         public List<Book> GetAllBooks()
         {
-            throw new NotImplementedException();
+            return context.Books.ToList();
         }
 
         public Book GetBook(int bookId)
         {
-            throw new NotImplementedException();
+            var book = context.Books.FirstOrDefault(x => x.Id == bookId); 
+
+            if(book == null)
+            {
+                return null;
+            }
+
+            return book;
         }
     }
 }

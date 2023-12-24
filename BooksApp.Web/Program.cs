@@ -1,8 +1,19 @@
+using BooksApp.Data;
+using BooksApp.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddCors();
 builder.Services.AddControllers();
+builder.Services.AddDbContext<BooksDbContext>(opts =>
+{
+    opts.EnableDetailedErrors();
+    opts.UseNpgsql(builder.Configuration.GetConnectionString("books.dev"));
+});
+builder.Services.AddTransient<IBookService, BookServices>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -16,7 +27,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
+
+app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseAuthorization();
 
