@@ -1,9 +1,17 @@
-﻿using BooksApp.Data.Models;
+﻿using BooksApp.Data;
+using BooksApp.Data.Models;
 
 namespace BooksApp.Services
 {
     public class BookServices : IBookService
     {
+        private readonly BooksDbContext context;
+
+        public BookServices(BooksDbContext context)
+        {
+            this.context = context;
+        }
+
         public void AddBook(Book book)
         {
             throw new NotImplementedException();
