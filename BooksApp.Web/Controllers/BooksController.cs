@@ -36,6 +36,11 @@ namespace BooksApp.Web.Controllers
         [HttpPost]
         public ActionResult PostBook([FromBody] NewBookRequest bookRequest)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest("Model State not valid.");
+            }
+
             var now = DateTime.UtcNow;
             var book = new Book
             {
