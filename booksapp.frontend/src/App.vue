@@ -1,10 +1,17 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/books">My Books</router-link>
   </nav>
   <router-view/>
 </template>
+
+<script setup lang="ts">
+import { provide } from 'vue';
+import BookService from './Services/book.service';
+
+provide("booksService", new BookService())
+</script>
 
 <style>
 #app {
